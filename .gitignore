@@ -1,0 +1,12 @@
+# ide folders
+.idea/
+
+# not project files
+__pycache__
+.DS_Store
+.venv
+quiz_questions_flask/.env
+.flake8
+
+# sqlite3 database
+/quiz_questions_flask/instance/

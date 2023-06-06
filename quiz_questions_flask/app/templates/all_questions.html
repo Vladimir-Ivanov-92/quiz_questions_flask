@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{{url_for('main.main')}}">
+  <button type="button">Назад на главную страницу</button>
+</a>
+
+{% if result %}
+  {% for res in result %}
+    <p>id: {{res.question_id}} </p>
+    <p>question: {{res.question}} </p>
+    <p>answer: {{res.answer}} </p>
+    <p>created_at: {{res.created_at}} </p>
+  {% endfor %}
+{% endif %}
+
+
+{% endblock %}

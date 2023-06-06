@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/" method="post">
+  <p>
+    <label>Кол-во вопросов: </label>
+    <input type="text" name="questions_num" value="" required>
+  </p>
+  <p><input type="submit" value="Отправить"></p>
+</form>
+
+<a href="{{url_for('main.all')}}"}>
+  <button type="button">Получить все записи</button>
+</a>
+
+{% if result %}
+
+  {% for res in result %}
+    <p>id: {{res.question_id}} </p>
+    <p>question: {{res.question}} </p>
+    <p>answer: {{res.answer}} </p>
+    <p>created_at: {{res.created_at}} </p>
+  {% endfor %}
+
+{% endif %}
+
+
+{% endblock %}
